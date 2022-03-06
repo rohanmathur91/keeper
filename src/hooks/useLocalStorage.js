@@ -1,6 +1,9 @@
 import { useEffect } from "react";
+import { useNotes } from "../context/NoteContext";
 
-export const useLocalStorage = (notes, setNotes) => {
+export const useLocalStorage = () => {
+	const { notes, setNotes } = useNotes();
+
 	useEffect(() => {
 		setNotes(JSON.parse(localStorage.getItem("notes")) ?? []);
 	}, []);
