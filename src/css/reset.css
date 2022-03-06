@@ -7,10 +7,15 @@
 	--secondary-color: #fafafa;
 }
 
-/* dark mode */
-.dark-mode {
-	--primary-color: #fafafa;
-	--secondary-color: #1e293b;
+/* theme */
+.light {
+	color: var(--primary-color);
+	background-color: var(--secondary-color);
+}
+
+.dark {
+	color: var(--secondary-color);
+	background-color: var(--primary-color);
 }
 
 /* reset */
@@ -25,7 +30,6 @@ html {
 }
 
 body {
-	background-color: var(--secondary-color);
 	font-family: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Roboto,
 		Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
 		Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -34,7 +38,6 @@ body {
 input,
 textarea {
 	outline: none;
-	color: var(--primary-color);
 	background-color: inherit;
 }
 
@@ -62,4 +65,13 @@ button {
 
 button:hover {
 	background-color: var(--primary-light-color);
+}
+
+p,
+input,
+button,
+textarea,
+label,
+article {
+	font-size: 1.4rem;
 }
