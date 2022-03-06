@@ -1,0 +1,64 @@
+:root {
+	--black: #171717;
+	--gray: #cbd5e1;
+	--light-gray: #475569;
+	--primary-color: #1e293b;
+	--primary-light-color: #384355;
+	--secondary-color: #fafafa;
+}
+
+/* dark mode */
+.dark-mode {
+	--primary-color: #fafafa;
+	--secondary-color: #1e293b;
+}
+
+/* reset */
+html {
+	font-size: 62.5%; /* 1rem -> 10px */
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--secondary-color);
+	font-family: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Roboto,
+		Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+		Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+input,
+textarea {
+	outline: none;
+	background-color: inherit;
+}
+
+textarea {
+	resize: none;
+}
+
+input,
+button,
+textarea {
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 4px;
+	font-family: inherit;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+button {
+	color: var(--secondary-color);
+	background-color: var(--primary-color);
+}
+
+button:hover {
+	background-color: var(--primary-light-color);
+}
