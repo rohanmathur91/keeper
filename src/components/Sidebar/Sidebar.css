@@ -1,0 +1,17 @@
+.sidebar {
+	margin-top: 2rem;
+	grid-area: sidebar;
+}
+
+.sidebar-item {
+	padding: 1rem 2rem;
+}
+
+.sidebar-item:hover {
+	background-color: var(--gray);
+	border-radius: 0 2.5rem 2.5rem 0;
+	-webkit-border-radius: 0 2.5rem 2.5rem 0;
+	-moz-border-radius: 0 2.5rem 2.5rem 0;
+	-ms-border-radius: 0 2.5rem 2.5rem 0;
+	-o-border-radius: 0 2.5rem 2.5rem 0;
+}

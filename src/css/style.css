@@ -1,8 +1,15 @@
 @import "./utility.css";
 @import "./reset.css";
 
+.container {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-areas: "sidebar main";
+	height: calc(100vh - 2.4rem);
+}
+
 .notes-container {
-	margin: 4rem auto;
+	grid-area: main;
 }
 
 .notes {
@@ -36,19 +43,21 @@
 	height: 8rem;
 }
 
-.card-list-container {
+.note-list-container {
+	margin: auto;
+	max-width: 80rem;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: center;
 }
 
-.card {
-	padding: 1rem;
+.note {
+	padding: 1rem 2rem;
 	margin: 8px;
 	border-radius: 4px;
 	border: 1px solid var(--primary-light-color);
-	max-width: 20rem;
+	max-width: 25rem;
 }
 
 .color-list {

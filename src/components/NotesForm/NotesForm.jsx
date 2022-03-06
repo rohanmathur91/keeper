@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { ColorList } from "../index";
-import { useNotes } from "../../context/NoteContext";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useNotes } from "../../context";
+import { useLocalStorage } from "../../hooks";
 
 export const NotesForm = () => {
 	const [title, setTitle] = useState("");
@@ -11,7 +11,7 @@ export const NotesForm = () => {
 	const { clearAll } = useLocalStorage();
 	const { addNotes } = useNotes();
 
-	const handleformSubmit = e => {
+	const handleformSubmit = (e) => {
 		e.preventDefault();
 		addNotes({ id: uuid(), title, content, color: backgroundColors });
 		setTitle("");
@@ -19,7 +19,7 @@ export const NotesForm = () => {
 		setBackgroundColors("");
 	};
 
-	const handleColorClick = color => setBackgroundColors(color);
+	const handleColorClick = (color) => setBackgroundColors(color);
 
 	return (
 		<div className="notes">
@@ -34,14 +34,14 @@ export const NotesForm = () => {
 					value={title}
 					placeholder="Title"
 					className="note-title-input"
-					onChange={e => setTitle(e.target.value)}
+					onChange={(e) => setTitle(e.target.value)}
 				/>
 				<textarea
 					required
 					value={content}
 					placeholder="Take a note..."
 					className="note-task-input"
-					onChange={e => setContent(e.target.value)}
+					onChange={(e) => setContent(e.target.value)}
 				/>
 				<button className="btn">Add</button>
 			</form>

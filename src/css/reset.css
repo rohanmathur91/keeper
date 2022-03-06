@@ -7,17 +7,6 @@
 	--secondary-color: #fafafa;
 }
 
-/* theme */
-.light {
-	color: var(--primary-color);
-	background-color: var(--secondary-color);
-}
-
-.dark {
-	color: var(--secondary-color);
-	background-color: var(--primary-color);
-}
-
 /* reset */
 html {
 	font-size: 62.5%; /* 1rem -> 10px */
@@ -30,6 +19,8 @@ html {
 }
 
 body {
+	color: var(--primary-color);
+	background-color: var(--secondary-color);
 	font-family: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Roboto,
 		Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
 		Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -68,6 +59,8 @@ button:hover {
 }
 
 p,
+ul,
+li,
 input,
 button,
 textarea,
