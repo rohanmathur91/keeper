@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useNotes } from "../context/NoteContext";
 
 export const useLocalStorage = () => {
-	const { notes, setNotes } = useNotes();
+	const { notes, updateList, clearList } = useNotes();
 
 	useEffect(() => {
-		setNotes(JSON.parse(localStorage.getItem("notes")) ?? []);
+		updateList(JSON.parse(localStorage.getItem("notes")) ?? []);
 	}, []);
 
 	useEffect(() => {
@@ -14,7 +14,7 @@ export const useLocalStorage = () => {
 
 	const clearAll = () => {
 		localStorage.removeItem("notes");
-		setNotes([]);
+		clearList();
 	};
 
 	return { clearAll };

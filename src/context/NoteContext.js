@@ -7,10 +7,13 @@ const NoteProvider = ({ children }) => {
 	const [archiveNotesList, setArchiveNotesList] = useState([]);
 	const [deletedNotesList, setDeletedNotesList] = useState([]);
 
-	console.log(deletedNotesList);
 	const addNotes = (note) => {
 		setNotes((prevNotes) => [note, ...prevNotes]);
 	};
+
+	const clearList = () => setNotes([]);
+
+	const updateList = (list) => setNotes((prevList) => list);
 
 	const archiveNote = (note) => {
 		setArchiveNotesList((prevNotes) => [note, ...prevNotes]);
@@ -30,7 +33,8 @@ const NoteProvider = ({ children }) => {
 				notes,
 				archiveNotesList,
 				archiveNote,
-				setNotes,
+				updateList,
+				clearList,
 				addNotes,
 				deleteNote,
 			}}
