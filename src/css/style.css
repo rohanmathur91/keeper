@@ -1,3 +1,6 @@
+@import "./utility.css";
+@import "./reset.css";
+
 .notes-container {
 	margin: 4rem auto;
 }
@@ -8,26 +11,32 @@
 	align-items: center;
 }
 
-form {
+.note-form {
+	padding: 1rem;
 	width: 100%;
-	max-width: 30rem;
+	max-width: 50rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	border: 1px solid var(--primary-light-color);
 }
 
-input,
-textarea {
+.note-title-input,
+.note-task-input {
 	width: 100%;
-	margin: 4px;
+	margin-bottom: 2rem;
 }
 
-textarea {
-	resize: none;
+.note-title-input {
+	font-weight: 600;
+	font-size: 1.6rem;
+}
+
+.note-task-input {
 	height: 8rem;
 }
 
-.card-container {
+.card-list-container {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -47,14 +56,14 @@ textarea {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 1rem;
 }
 
 .color-picker {
-	border: none;
-	width: 2rem;
-	height: 2rem;
-	border-radius: 50%;
 	margin: 2px;
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 50%;
 }
 
 .color-picker:hover {

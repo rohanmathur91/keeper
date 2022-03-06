@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
-import { bgList } from "../data";
-import "./App.css";
+import { colors } from "./data";
+import "./css/style.css";
 
 const App = () => {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 	const [notes, setNotes] = useState([]);
-	const [bgColor, setBgColor] = useState("");
+	const [backgroundColors, setBackgroundColors] = useState("");
 
 	useEffect(() => {
 		const notesList = localStorage.getItem("notes");
@@ -20,10 +20,13 @@ const App = () => {
 
 	const handleformSubmit = e => {
 		e.preventDefault();
-		setNotes(prev => [{ id: uuid(), title, content, color: bgColor }, ...prev]);
+		setNotes(prev => [
+			{ id: uuid(), title, content, color: backgroundColors },
+			...prev,
+		]);
 		setTitle("");
 		setContent("");
-		setBgColor("");
+		setBackgroundColors("");
 	};
 
 	const handleClearAll = () => {
@@ -31,32 +34,36 @@ const App = () => {
 		setNotes([]);
 	};
 
-	const handleColorClick = color => setBgColor(color);
+	const handleColorClick = color => setBackgroundColors(color);
 
 	return (
 		<div className="notes-container">
-			<div className="notes">
+			<div className="notes ">
 				<form
 					onSubmit={handleformSubmit}
-					style={{ background: bgColor }}
-					className="p-3"
+					className="note-form border-radius-sm"
+					style={{ background: backgroundColors }}
 				>
 					<input
 						required
-						value={title}
 						type="text"
+						value={title}
+						placeholder="Title"
+						className="note-title-input"
 						onChange={e => setTitle(e.target.value)}
 					/>
 					<textarea
 						required
 						value={content}
+						placeholder="Take a note..."
+						className="note-task-input"
 						onChange={e => setContent(e.target.value)}
 					/>
-					<button className="m-1 py-1 px-4 rounded">Add</button>
+					<button className="btn">Add</button>
 				</form>
 
 				<span className="color-list">
-					{bgList.map(color => {
+					{colors.map(color => {
 						console.log(color);
 						return (
 							<button
@@ -68,12 +75,12 @@ const App = () => {
 					})}
 				</span>
 
-				<button onClick={handleClearAll} className="m-1 py-1 px-4 rounded">
+				<button onClick={handleClearAll} className="btn">
 					Clear all
 				</button>
 			</div>
 
-			<div className="card-container">
+			<div className="card-list-container">
 				{notes.map(({ id, title, content, color }) => {
 					return (
 						<div key={id} className="card" style={{ background: color }}>

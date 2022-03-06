@@ -34,6 +34,7 @@ body {
 input,
 textarea {
 	outline: none;
+	color: var(--primary-color);
 	background-color: inherit;
 }
 
@@ -45,7 +46,7 @@ input,
 button,
 textarea {
 	border: none;
-	padding: 1rem 2rem;
+	font-size: 1.4rem;
 	border-radius: 4px;
 	font-family: inherit;
 	-webkit-border-radius: 4px;
