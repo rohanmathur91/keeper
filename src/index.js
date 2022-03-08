@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { NoteProvider } from "./context/NoteContext";
+import { NoteProvider, ThemeProvider } from "./context";
 
 ReactDOM.render(
-	<NoteProvider>
-		<App />
-	</NoteProvider>,
+	<ThemeProvider>
+		<NoteProvider>
+			<App />
+		</NoteProvider>
+	</ThemeProvider>,
 	document.querySelector("#root")
 );

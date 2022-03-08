@@ -7,6 +7,12 @@
 	--secondary-color: #fafafa;
 }
 
+.dark {
+	--primary-color: #fafafa;
+	--primary-light-color: #384355;
+	--secondary-color: #1e293b;
+}
+
 /* reset */
 html {
 	font-size: 62.5%; /* 1rem -> 10px */

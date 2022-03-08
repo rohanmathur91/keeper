@@ -5,28 +5,36 @@ import { useNotes } from "../../context";
 import { useLocalStorage } from "../../hooks";
 
 export const NotesForm = () => {
-	const [title, setTitle] = useState("");
-	const [content, setContent] = useState("");
-	const [backgroundColors, setBackgroundColors] = useState("");
-	const { clearAll } = useLocalStorage();
+	const [note, setNote] = useState({
+		title: "",
+		content: "",
+		backgroundColor: "",
+	});
 	const { addNotes } = useNotes();
+	const { clearAll } = useLocalStorage();
+	const { title, content, backgroundColor } = note;
 
-	const handleformSubmit = (e) => {
-		e.preventDefault();
-		addNotes({ id: uuid(), title, content, color: backgroundColors });
-		setTitle("");
-		setContent("");
-		setBackgroundColors("");
+	const handleformSubmit = (event) => {
+		event.preventDefault();
+		addNotes({ id: uuid(), ...note });
+		setNote({
+			title: "",
+			content: "",
+			backgroundColor: "",
+		});
 	};
 
-	const handleColorClick = (color) => setBackgroundColors(color);
+	const handleOnChange = (key, value) => {
+		console.log(note);
+		setNote((prevNote) => ({ ...prevNote, [key]: value }));
+	};
 
 	return (
 		<div className="notes">
 			<form
 				onSubmit={handleformSubmit}
 				className="note-form border-radius-sm"
-				style={{ background: backgroundColors }}
+				style={{ background: backgroundColor }}
 			>
 				<input
 					required
@@ -34,19 +42,19 @@ export const NotesForm = () => {
 					value={title}
 					placeholder="Title"
 					className="note-title-input"
-					onChange={(e) => setTitle(e.target.value)}
+					onChange={(event) => handleOnChange("title", event.target.value)}
 				/>
 				<textarea
 					required
 					value={content}
 					placeholder="Take a note..."
 					className="note-task-input"
-					onChange={(e) => setContent(e.target.value)}
+					onChange={(event) => handleOnChange("content", event.target.value)}
 				/>
 				<button className="btn">Add</button>
 			</form>
 
-			<ColorList handleColorClick={handleColorClick} />
+			<ColorList handleOnChange={handleOnChange} />
 			<button onClick={clearAll} className="btn">
 				Clear all
 			</button>

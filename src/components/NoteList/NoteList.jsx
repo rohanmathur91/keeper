@@ -6,21 +6,19 @@ export const NoteList = () => {
 
 	return (
 		<div className="note-list-container">
-			{notes.map(({ id, title, content, color }) => (
-				<div key={id} className="note" style={{ background: color }}>
-					<h2>{title}</h2>
-					<p>{content}</p>
-					<button
-						onClick={() => archiveNote({ id, title, content, color })}
-						className="btn"
-					>
+			{notes.map((note) => (
+				<div
+					key={note.id}
+					className="note"
+					style={{ background: note.backgroundColor }}
+				>
+					<h2>{note.title}</h2>
+					<p>{note.content}</p>
+					<button onClick={() => archiveNote(note)} className="btn">
 						Archive
 					</button>
 
-					<button
-						onClick={() => deleteNote({ id, title, content, color })}
-						className="btn"
-					>
+					<button onClick={() => deleteNote(note)} className="btn">
 						Delete
 					</button>
 				</div>

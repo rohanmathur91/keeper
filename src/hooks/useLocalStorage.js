@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNotes } from "../context/NoteContext";
+import { useNotes } from "../context";
 
 export const useLocalStorage = () => {
 	const { notes, updateList, clearList } = useNotes();

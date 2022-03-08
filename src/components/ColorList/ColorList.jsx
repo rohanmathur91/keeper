@@ -1,7 +1,7 @@
 import React from "react";
 import { colors } from "../../data";
 
-export const ColorList = ({ handleColorClick }) => {
+export const ColorList = ({ handleOnChange }) => {
 	return (
 		<span className="color-list">
 			{colors.map((color) => (
@@ -9,7 +9,7 @@ export const ColorList = ({ handleColorClick }) => {
 					key={color}
 					className="color-picker"
 					style={{ background: color }}
-					onClick={() => handleColorClick(color)}
+					onClick={() => handleOnChange("backgroundColor", color)}
 				></button>
 			))}
 		</span>
