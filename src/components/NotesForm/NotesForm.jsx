@@ -16,7 +16,11 @@ export const NotesForm = () => {
 
 	const handleformSubmit = (event) => {
 		event.preventDefault();
-		addNotes({ id: uuid(), ...note });
+		addNotes({
+			...note,
+			id: uuid(),
+			backgroundColor: backgroundColor || "#d4d4d4",
+		});
 		setNote({
 			title: "",
 			content: "",
@@ -25,7 +29,6 @@ export const NotesForm = () => {
 	};
 
 	const handleOnChange = (key, value) => {
-		console.log(note);
 		setNote((prevNote) => ({ ...prevNote, [key]: value }));
 	};
 

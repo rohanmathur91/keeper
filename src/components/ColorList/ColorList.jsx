@@ -1,5 +1,6 @@
 import React from "react";
-import { colors } from "../../data";
+import { colors } from "./data";
+import "./ColorList.css";
 
 export const ColorList = ({ handleOnChange }) => {
 	return (

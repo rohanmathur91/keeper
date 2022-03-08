@@ -1,5 +1,6 @@
 import React from "react";
-import { useNotes } from "../../context/NoteContext";
+import { useNotes } from "../../context";
+import "./NoteList.css";
 
 export const NoteList = () => {
 	const { notes, archiveNote, deleteNote } = useNotes();
@@ -12,8 +13,8 @@ export const NoteList = () => {
 					className="note"
 					style={{ background: note.backgroundColor }}
 				>
-					<h2>{note.title}</h2>
-					<p>{note.content}</p>
+					<h2 className="note-title">{note.title}</h2>
+					<p className="note-content">{note.content}</p>
 					<button onClick={() => archiveNote(note)} className="btn">
 						Archive
 					</button>

@@ -13,8 +13,8 @@ export const useLocalStorage = () => {
 	}, [notes]);
 
 	const clearAll = () => {
-		localStorage.removeItem("notes");
 		clearList();
+		localStorage.removeItem("notes");
 	};
 
 	return { clearAll };

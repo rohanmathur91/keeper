@@ -1,0 +1,18 @@
+.color-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem;
+}
+
+.color-picker {
+	margin: 2px;
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 50%;
+}
+
+.color-picker:hover {
+	opacity: 0.7;
+	border: 1px solid #3f3f46;
+}

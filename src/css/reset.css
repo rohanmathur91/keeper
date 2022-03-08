@@ -5,10 +5,12 @@
 	--primary-color: #1e293b;
 	--primary-light-color: #384355;
 	--secondary-color: #fafafa;
+	--text-color: #1e293b;
 }
 
 .dark {
-	--primary-color: #fafafa;
+	--gray: #384355;
+	--primary-color: #e2e8f0;
 	--primary-light-color: #384355;
 	--secondary-color: #1e293b;
 }
@@ -25,8 +27,6 @@ html {
 }
 
 body {
-	color: var(--primary-color);
-	background-color: var(--secondary-color);
 	font-family: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Roboto,
 		Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
 		Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -53,6 +53,7 @@ textarea {
 	-moz-border-radius: 4px;
 	-ms-border-radius: 4px;
 	-o-border-radius: 4px;
+	color: var(--primary-color);
 }
 
 button {
